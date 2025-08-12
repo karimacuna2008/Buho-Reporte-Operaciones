@@ -444,7 +444,7 @@ with tempfile.NamedTemporaryFile(delete=False, suffix=".csv") as tmp:
     csv_path = tmp.name
 
 st.header("Parámetros Generales")
-c1, c2 = st.columns(3)
+c1, c2 = st.columns(2)
 with c1:
     mes = st.selectbox("Mes", ["Enero","Febrero","Marzo","Abril","Mayo","Junio",
                                "Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"])
