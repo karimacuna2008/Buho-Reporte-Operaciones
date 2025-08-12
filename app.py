@@ -446,8 +446,13 @@ with tempfile.NamedTemporaryFile(delete=False, suffix=".csv") as tmp:
 st.header("Parámetros Generales")
 c1, c2 = st.columns(2)
 with c1:
-    mes = st.selectbox("Mes", ["Enero","Febrero","Marzo","Abril","Mayo","Junio",
-                               "Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"])
+    MESES = ["Enero","Febrero","Marzo","Abril","Mayo","Junio",
+            "Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"]
+
+    now_mty = datetime.now(ZoneInfo("America/Monterrey"))
+    mes_index = now_mty.month - 1  # 0-11
+    
+    mes = st.selectbox("Mes", MESES, index=mes_index)
 with c2:
     year = st.number_input("Año", 2000, 2100, 2025)
 
