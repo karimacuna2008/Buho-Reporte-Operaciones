@@ -22,7 +22,7 @@ SCOPES = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive"
 ]
-SPREADSHEET_ID = '1WGyrHiijgII6ay7-4qu4R6Fcu7votUHL_nHgwRBwPYo'
+SPREADSHEET_ID = st.secrets["app"]["spreadsheet_id"]
 
 creds  = Credentials.from_service_account_info(SERVICE_ACCOUNT_INFO, scopes=SCOPES)
 client = gspread.authorize(creds)
